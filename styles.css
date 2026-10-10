@@ -251,8 +251,18 @@ h3 { font-size: clamp(1.5rem, 2.4vw, 2rem); }
 .faq details[open] summary::after { transform: rotate(45deg); }
 .faq p { margin-top: .8rem; color: var(--ivory-2); opacity: .85; }
 
-/* nav: evita sobreposição no celular */
+/* nav: nunca sobrepor o nome da marca no celular */
+.nav { gap: 1rem; }
+.nav .brand { flex: 0 1 auto; min-width: 0; white-space: nowrap; }
+.nav .btn--sm { flex: 0 0 auto; white-space: nowrap; }
 @media (max-width: 520px) {
-  .nav .btn--sm { padding: .6rem .9rem; font-size: .66rem; letter-spacing: .08em; width: auto; }
-  .nav .brand { font-size: 1.35rem; display: inline-flex; align-items: center; gap: .5rem; }
+  .nav { padding-inline: 16px; gap: .6rem; }
+  .nav .brand { font-size: 1.3rem; gap: .45rem; }
+  .nav .brand img { width: 28px; height: 28px; }
+  .nav .btn--sm { width: auto; padding: .55rem .9rem; font-size: .64rem; letter-spacing: .08em; }
+  .nav__more { display: none; }
+}
+@media (max-width: 340px) {
+  .nav .brand { font-size: 1.1rem; }
+  .nav .brand img { display: none; }
 }
